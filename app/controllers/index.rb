@@ -1,4 +1,9 @@
-get '/' do
-  # Look in app/views/index.erb
+get "/" do
   erb :index
+end
+ 
+post "/" do 
+  the_tweet = params[:tweet]
+  Twitter.update(the_tweet)
+  redirect "/"
 end
